@@ -11,7 +11,15 @@ const kcContextExtension: KcContextExtension = {
         ...kcEnvDefaults
     }
 };
-const kcContextExtensionPerPage: KcContextExtensionPerPage = {};
+
+const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+    "login-force-update-password.ftl": {},
+    "login-force-update-pin.ftl": {},
+    "login-manual-update-password.ftl": {},
+    "login-manual-update-pin.ftl": {},
+    "forget-password.ftl": {},
+    "forget-pin.ftl": {}
+};
 
 export const { getKcContextMock } = createGetKcContextMock({
     kcContextExtension,

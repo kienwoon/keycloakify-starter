@@ -12,6 +12,14 @@ cd keycloakify-starter
 yarn install # Or use an other package manager, just be sure to delete the yarn.lock if you use another package manager.
 ```
 
+## Sync notes (starter changes)
+
+- Added `prestorybook` script which runs Keycloakify generation and copies Keycloak resources into `public/`.
+- Storybook: run `npm run prestorybook` before `npm run storybook` (the starter's `storybook` script already runs `prestorybook`).
+- Tailwind: added `tailwindcss-animate` and updated `tailwind.config.js` to include `keycloakify` and Storybook paths.
+- Build: `npm run build` runs `tsc && vite build` — some lint flags were relaxed (`noUnusedLocals`/`noUnusedParameters`) to ease syncing with the theme sources.
+- If you need to package a Keycloak theme JAR, use `npm run build-keycloak-theme` (Maven + Java required).
+
 # Testing the theme locally
 
 [Documentation](https://docs.keycloakify.dev/testing-your-theme)

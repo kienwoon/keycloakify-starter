@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
+/* eslint-disable @typescript-eslint/ban-types */
 import type { ExtendKcContext } from "keycloakify/login";
 import type { KcEnvName, ThemeName } from "../kc.gen";
 
@@ -9,6 +9,13 @@ export type KcContextExtension = {
     // See: https://docs.keycloakify.dev/faq-and-help/some-values-you-need-are-missing-from-in-kccontext
 };
 
-export type KcContextExtensionPerPage = {};
+export type KcContextExtensionPerPage = {
+    "login-force-update-password.ftl": {};
+    "login-force-update-pin.ftl": {};
+    "login-manual-update-password.ftl": {};
+    "login-manual-update-pin.ftl": {};
+    "forget-password.ftl": {};
+    "forget-pin.ftl": {};
+};
 
 export type KcContext = ExtendKcContext<KcContextExtension, KcContextExtensionPerPage>;
