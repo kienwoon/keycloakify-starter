@@ -27,6 +27,37 @@ export default function ForgetPassword(
       headerNode="Forget Password"
     >
       <form id="kc-forget-password-form" action={url.loginAction} method="post" className="flex flex-col">
+        {/* Username Field */}
+        <div className={kcClsx("kcFormGroupClass")}>
+          <div>
+            <Label htmlFor="username" className="text-lg">
+              {msg("username")}
+            </Label>
+          </div>
+          <div>
+            <Input
+              type="text"
+              id="username"
+              className=""
+              name="username"
+              autoFocus
+              autoComplete="off"
+              required
+              aria-required="true"
+              aria-invalid={messagesPerField.existsError("username")}
+            />
+            {messagesPerField.existsError("username") && (
+              <span
+                id="input-error-username"
+                className={kcClsx("kcInputErrorMessageClass")}
+                aria-live="polite"
+                dangerouslySetInnerHTML={{
+                  __html: kcSanitize(messagesPerField.get("username"))
+                }}
+              />
+            )}
+          </div>
+        </div>
         {/* Hint Field */}
         <div className={kcClsx("kcFormGroupClass")}>
           <div>
@@ -40,7 +71,6 @@ export default function ForgetPassword(
               id="hint"
               className=""
               name="hint"
-              autoFocus
               autoComplete="off"
               required
               aria-required="true"

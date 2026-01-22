@@ -1,3 +1,5 @@
+import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
+
 export interface SocialProviderSingpassProps {
     href: string;
     className?: string;
@@ -19,7 +21,7 @@ export const SocialProviderSingpass = ({ href, className = "" }: SocialProviderS
                     Log in with
                 </span>
                 <img
-                    src="/img/singpass-logo.svg"
+                    src={`${PUBLIC_URL}/img/singpass-logo.svg`}
                     alt="Singpass"
                     role="img"
                     aria-label="Sing pass"

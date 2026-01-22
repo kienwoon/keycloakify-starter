@@ -22,9 +22,10 @@ export const WithPasswordErrors: Story = {
         <KcPageStory
             kcContext={{
                     messagesPerField: {
-                        existsError: (field: string) => field === "hint" || field === "hint-answer",
+                        existsError: (field: string) => field == "username" || field === "hint" || field === "hint-answer",
                         get: (field: string) => {
-                            if (field === "hint") return "Hint is required";
+                            if (field === "username") return "Username is required";
+                            if (field === "hint") return "Hint is required";                            
                             if (field === "hint-answer") return "Hint answer is required";
                             return "";
                         }
@@ -49,8 +50,9 @@ export const MultipleErrors: Story = {
         <KcPageStory
             kcContext={{
                 messagesPerField: {
-                    existsError: (field: string) => field === "hint" || field === "hint-answer",
+                    existsError: (field: string) => field == "username" || field === "hint" || field === "hint-answer",
                     get: (field: string) => {
+                        if (field === "username") return "Username is required";
                         if (field === "hint") return "Hint is too vague";
                         if (field === "hint-answer") return "Hint answer is required";
                         return "";
@@ -66,7 +68,7 @@ export const EmptyFormSubmit: Story = {
         <KcPageStory
             kcContext={{
                 messagesPerField: {
-                    existsError: (field: string) => field === "hint" || field === "hint-answer",
+                    existsError: (field: string) => field == "username" || field === "hint" || field === "hint-answer",
                     get: (_field: string) => "This field is required"
                 }
             }}
